@@ -1,9 +1,6 @@
 package com.example.springbootspringdatajpa.logika;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HelloController {
@@ -27,5 +24,14 @@ public class HelloController {
     @GetMapping("/param/{name}")
     public String helloPathParam(@PathVariable("name") String name){
         return "Hello " + name;
+    }
+
+    // http://localhost:8080/body POST metoda body JSON:
+    // {
+    //    "name":"Daniel"
+    // }
+    @PostMapping("/body")
+    public String body(@RequestBody HelloRequestBody body){
+        return "hello " + body.getName();
     }
 }

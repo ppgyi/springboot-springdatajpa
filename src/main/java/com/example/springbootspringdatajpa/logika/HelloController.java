@@ -48,4 +48,10 @@ public class HelloController {
     public String body(@RequestBody HelloRequestBody body){
         return service.createResponse(body);
     }
+
+    //Vracia nam objekt nie String:
+    @GetMapping("/object")
+    public HelloRespose helloRespose(){
+        return new HelloRespose(counter++, "Ahoj toto je objekt");
+    }
 }

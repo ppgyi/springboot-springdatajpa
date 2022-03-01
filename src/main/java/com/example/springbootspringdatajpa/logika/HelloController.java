@@ -1,6 +1,5 @@
 package com.example.springbootspringdatajpa.logika;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

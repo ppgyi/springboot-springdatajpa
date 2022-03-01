@@ -14,6 +14,11 @@ public class HelloController {
     public HelloController(HelloService service) {
         this.service = service;
     }
+//    Alebo sa to da cez setter: (nebude sa cyklit)
+//    @Autowired
+//    public void setService(HelloService service) {
+//        this.service = service;
+//    }
 
     private int counter = 0;
 

@@ -1,9 +1,19 @@
 package com.example.springbootspringdatajpa.logika;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HelloController {
+
+//    @Autowired
+//    bud dame toto alebo to inicializujeme cez konstruktor -
+//    odporoca sa cez konstruktor
+    private HelloService service;
+
+    public HelloController(HelloService service) {
+        this.service = service;
+    }
 
     private int counter = 0;
 
@@ -32,6 +42,6 @@ public class HelloController {
     // }
     @PostMapping("/body")
     public String body(@RequestBody HelloRequestBody body){
-        return "hello " + body.getName();
+        return service.createResponse(body);
     }
 }

@@ -5,22 +5,28 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
-//@RequestMapping("/product") === toto je end point pre vsetkych!
 @RequestMapping("/animal")
 public class TestController {
 
     @Autowired
     private TestAnimalServiceImplement serviceImplement;
 
-    // potom toto vyzera takto: .../product/hello
-    // @GetMapping("/hello")
-    public String hello(){
-        return "Hello world";
-    }
 
     @GetMapping()
-    public List<TestAnimalResponse> getAllAnimals(){}
+    public List<TestAnimalResponse> getAllAnimals(){
+        return this.serviceImplement.getAll().stream()
+                .map(TestAnimalResponse::new)
+                .collect(Collectors.toList());
+        // Alebo takto je to to iste:
+//        var result = new ArrayList<TestAnimalResponse>();
+//        for (TestEntityAnimal a : this.serviceImplement.getAll()){
+//            result.add(new TestAnimalResponse(a));
+//        }
+//        return result;
+    }
 }

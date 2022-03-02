@@ -40,4 +40,12 @@ public class TestController {
             return "Animal deleted";
         });
     }
+
+    // Vyhladavanie:
+    @GetMapping("/{name}")
+    public List<TestAnimalResponse> getAllAnimalsByName(@PathVariable("name") String name) {
+        return this.serviceImplement.getAllByName(name).stream()
+                .map(TestAnimalResponse::new)
+                .collect(Collectors.toList());
+    }
 }

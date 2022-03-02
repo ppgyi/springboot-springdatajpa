@@ -8,4 +8,5 @@ import lombok.Setter;
 public class TestAnimalRequest {
 
     private String species;
+    private String name;
 }

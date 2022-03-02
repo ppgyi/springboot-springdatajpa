@@ -9,4 +9,5 @@ public interface TestAnimalServiceImplement {
     TestEntityAnimal create(TestAnimalRequest request);
     void deleteById(Long id);
     Optional<TestEntityAnimal> findById(Long id);
+    List<TestEntityAnimal> getAllByName(String meno);
 }

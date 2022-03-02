@@ -9,4 +9,10 @@ import java.util.List;
 public interface TestAnimalRepository extends
         CrudRepository<TestEntityAnimal, Long> {
     List<TestEntityAnimal> findAll();
+
+    // Sposob na filtrovanie podla mena:
+    // Staci si vytvorit metodu tu v repository:
+    // Spring si vsetko vie automaticky vygenerovat napr staci takto:
+    // List<TestEntityAnimal> findByNameAndId(String name, long Id);
+    List<TestEntityAnimal> findByName(String name);
 }

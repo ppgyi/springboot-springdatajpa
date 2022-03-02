@@ -16,4 +16,7 @@ public class TestEntityAnimal {
     private Long id;
 
     private String species;
+
+    // Kvoli vyhladavaniu
+    private String name;
 }

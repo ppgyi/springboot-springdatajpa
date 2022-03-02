@@ -21,6 +21,7 @@ public class TestAnimalService implements TestAnimalServiceImplement {
     public TestEntityAnimal create(TestAnimalRequest request) {
         TestEntityAnimal newAnimal = new TestEntityAnimal();
         newAnimal.setSpecies(request.getSpecies());
+        newAnimal.setName(request.getName());
         return this.repository.save(newAnimal);
     }
 
@@ -32,5 +33,10 @@ public class TestAnimalService implements TestAnimalServiceImplement {
     @Override
     public Optional<TestEntityAnimal> findById(Long id) {
         return repository.findById(id);
+    }
+
+    @Override
+    public List<TestEntityAnimal> getAllByName(String meno) {
+        return this.repository.findByName(meno);
     }
 }

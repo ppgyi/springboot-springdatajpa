@@ -1,5 +1,6 @@
 package com.example.springbootspringdatajpa;
 
+import com.sun.istack.NotNull;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -12,7 +13,7 @@ import javax.persistence.Id;
 public class TestEntityAnimal {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String species;

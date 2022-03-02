@@ -1,9 +1,7 @@
 package com.example.springbootspringdatajpa;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,5 +26,10 @@ public class TestController {
 //            result.add(new TestAnimalResponse(a));
 //        }
 //        return result;
+    }
+
+    @PostMapping()
+    public TestAnimalResponse addAnimal(@RequestBody TestAnimalRequest request){
+        return new TestAnimalResponse(this.serviceImplement.create(request));
     }
 }

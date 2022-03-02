@@ -1,5 +1,6 @@
 package com.example.springbootspringdatajpa;
 
+import com.example.springbootspringdatajpa.entity.TestEntityAnimal;
 import lombok.Getter;
 
 @Getter

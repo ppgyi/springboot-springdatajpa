@@ -1,5 +1,9 @@
-package com.example.springbootspringdatajpa;
+package com.example.springbootspringdatajpa.service;
 
+import com.example.springbootspringdatajpa.TestAnimalRequest;
+import com.example.springbootspringdatajpa.service_implementacia.TestAnimalServiceImplement;
+import com.example.springbootspringdatajpa.entity.TestEntityAnimal;
+import com.example.springbootspringdatajpa.repository.TestAnimalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

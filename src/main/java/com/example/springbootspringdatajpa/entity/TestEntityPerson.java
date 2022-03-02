@@ -1,22 +1,25 @@
-package com.example.springbootspringdatajpa;
+package com.example.springbootspringdatajpa.entity;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Data
 @Entity
-public class TestEntityAnimal {
+@Getter
+@Setter
+@NoArgsConstructor
+public class TestEntityPerson {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String species;
-
-    // Kvoli vyhladavaniu
     private String name;
+
+    public TestEntityPerson(String name) {
+        this.name = name;
+    }
 }

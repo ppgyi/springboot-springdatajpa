@@ -1,4 +1,7 @@
-package com.example.springbootspringdatajpa;
+package com.example.springbootspringdatajpa.service_implementacia;
+
+import com.example.springbootspringdatajpa.TestAnimalRequest;
+import com.example.springbootspringdatajpa.entity.TestEntityAnimal;
 
 import java.util.List;
 import java.util.Optional;

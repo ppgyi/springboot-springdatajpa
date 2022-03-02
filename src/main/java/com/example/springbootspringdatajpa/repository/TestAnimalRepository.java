@@ -1,5 +1,6 @@
-package com.example.springbootspringdatajpa;
+package com.example.springbootspringdatajpa.repository;
 
+import com.example.springbootspringdatajpa.entity.TestEntityAnimal;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

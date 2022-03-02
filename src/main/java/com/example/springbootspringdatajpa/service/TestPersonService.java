@@ -6,6 +6,8 @@ import com.example.springbootspringdatajpa.service_implementacia.TestPersonServi
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TestPersonService implements TestPersonServiceImplementacia {
 
@@ -20,5 +22,10 @@ public class TestPersonService implements TestPersonServiceImplementacia {
         this.repository.save(new TestEntityPerson("Emil"));
         this.repository.save(new TestEntityPerson("Jakub"));
         this.repository.save(new TestEntityPerson("Andrej"));
+    }
+
+    @Override
+    public List<TestEntityPerson> findAll() {
+        return this.repository.findAll();
     }
 }

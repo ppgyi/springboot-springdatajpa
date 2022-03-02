@@ -1,4 +1,4 @@
-package com.example.springbootspringdatajpa;
+package com.example.springbootspringdatajpa.response;
 
 import com.example.springbootspringdatajpa.entity.TestEntityAnimal;
 import lombok.Getter;

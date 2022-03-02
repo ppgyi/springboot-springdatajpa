@@ -1,5 +1,7 @@
-package com.example.springbootspringdatajpa;
+package com.example.springbootspringdatajpa.controllers;
 
+import com.example.springbootspringdatajpa.TestAnimalRequest;
+import com.example.springbootspringdatajpa.response.TestAnimalResponse;
 import com.example.springbootspringdatajpa.service_implementacia.TestAnimalServiceImplement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +12,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/animal")
-public class TestController {
+public class TestAnimalController {
 
     @Autowired
     private TestAnimalServiceImplement serviceImplement;

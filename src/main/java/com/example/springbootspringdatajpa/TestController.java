@@ -3,8 +3,8 @@ package com.example.springbootspringdatajpa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
@@ -31,5 +31,13 @@ public class TestController {
     @PostMapping()
     public TestAnimalResponse addAnimal(@RequestBody TestAnimalRequest request){
         return new TestAnimalResponse(this.serviceImplement.create(request));
+    }
+
+    @DeleteMapping("/{id}")
+    public Optional<String> deleteProduct(@PathVariable(value = "id") Long id){
+        return serviceImplement.findById(id).map(p -> {
+            serviceImplement.deleteById(id);
+            return "Animal deleted";
+        });
     }
 }

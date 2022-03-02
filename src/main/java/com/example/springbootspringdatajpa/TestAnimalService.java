@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TestAnimalService implements TestAnimalServiceImplement {
@@ -21,5 +22,15 @@ public class TestAnimalService implements TestAnimalServiceImplement {
         TestEntityAnimal newAnimal = new TestEntityAnimal();
         newAnimal.setSpecies(request.getSpecies());
         return this.repository.save(newAnimal);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        repository.deleteById(id);
+    }
+
+    @Override
+    public Optional<TestEntityAnimal> findById(Long id) {
+        return repository.findById(id);
     }
 }

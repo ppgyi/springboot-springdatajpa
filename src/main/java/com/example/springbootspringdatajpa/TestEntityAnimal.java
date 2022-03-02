@@ -1,6 +1,5 @@
 package com.example.springbootspringdatajpa;
 
-import com.sun.istack.NotNull;
 import lombok.Data;
 
 import javax.persistence.Entity;

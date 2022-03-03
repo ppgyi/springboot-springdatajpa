@@ -24,4 +24,5 @@ public class TestEntityAnimal {
 
     @OneToMany
     private List<TestEntityPerson> personList = new ArrayList<>();
+    // musel som vytvorit v my sql novu tabulku a pridat 3 stlpce s IDCKAMI
 }

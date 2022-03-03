@@ -58,6 +58,9 @@ public class TestAnimalService implements TestAnimalServiceImplement {
         TestEntityPerson person = this.serviceImplement.getById(personId);
 
         animal.setPerson(person);
+        person.setAnimal(animal);
+
+        this.serviceImplement.save(person);
 
         return this.repository.save(animal);
     }

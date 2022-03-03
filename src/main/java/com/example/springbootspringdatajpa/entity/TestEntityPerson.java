@@ -2,10 +2,7 @@ package com.example.springbootspringdatajpa.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -18,6 +15,9 @@ public class TestEntityPerson {
     private Long id;
 
     private String name;
+
+    @OneToOne
+    private TestEntityAnimal animal;
 
     public TestEntityPerson(String name) {
         this.name = name;

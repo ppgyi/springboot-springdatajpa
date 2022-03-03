@@ -33,4 +33,9 @@ public class TestPersonService implements TestPersonServiceImplementacia {
     public TestEntityPerson getById(long id) {
         return this.repository.findById(id).get();
     }
+
+    @Override
+    public TestEntityPerson save(TestEntityPerson p) {
+        return this.repository.save(p);
+    }
 }

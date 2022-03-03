@@ -12,9 +12,12 @@ public class TestAnimalResponse {
 
     private String name;
 
+    private Long person;
+
     public TestAnimalResponse(TestEntityAnimal a) {
         this.id = a.getId();
         this.species = a.getSpecies();
         this.name = a.getName();
+        this.person = a.getPerson() == null ? null : a.getPerson().getId();
     }
 }

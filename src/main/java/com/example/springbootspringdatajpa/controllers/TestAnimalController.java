@@ -31,6 +31,15 @@ public class TestAnimalController {
 //        return result;
     }
 
+    // http://localhost:8080/animal/3?person=3
+    // Priradenie perosny k zvieratu:
+    @PutMapping("/{id}")
+    public TestAnimalResponse addPersonToAnimal(@PathVariable("id") long animalId,
+                                                @RequestParam("person") long personId){
+        return new TestAnimalResponse(this.serviceImplement
+                .addPersonToAnimal(animalId, personId));
+    }
+
     @PostMapping()
     public TestAnimalResponse addAnimal(@RequestBody TestAnimalRequest request){
         return new TestAnimalResponse(this.serviceImplement.create(request));

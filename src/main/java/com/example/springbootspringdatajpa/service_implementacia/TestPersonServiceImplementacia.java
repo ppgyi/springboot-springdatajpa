@@ -7,5 +7,6 @@ import java.util.List;
 public interface TestPersonServiceImplementacia {
 
     List<TestEntityPerson> findAll();
+    TestEntityPerson getById(long id);
 
 }

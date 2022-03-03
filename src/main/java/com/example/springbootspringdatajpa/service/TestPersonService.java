@@ -18,14 +18,19 @@ public class TestPersonService implements TestPersonServiceImplementacia {
     // zaciatok nieco vlozit
     public TestPersonService(TestPersonRepository repository) {
         this.repository = repository;
-
-        this.repository.save(new TestEntityPerson("Emil"));
-        this.repository.save(new TestEntityPerson("Jakub"));
-        this.repository.save(new TestEntityPerson("Andrej"));
+//              Pridat na tvrdo persons:
+//        this.repository.save(new TestEntityPerson("Emil"));
+//        this.repository.save(new TestEntityPerson("Jakub"));
+//        this.repository.save(new TestEntityPerson("Andrej"));
     }
 
     @Override
     public List<TestEntityPerson> findAll() {
         return this.repository.findAll();
+    }
+
+    @Override
+    public TestEntityPerson getById(long id) {
+        return this.repository.findById(id).get();
     }
 }

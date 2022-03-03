@@ -13,4 +13,5 @@ public interface TestAnimalServiceImplement {
     void deleteById(Long id);
     Optional<TestEntityAnimal> findById(Long id);
     List<TestEntityAnimal> getAllByName(String meno);
+    TestEntityAnimal addPersonToAnimal(long animalId, long personId);
 }

@@ -16,6 +16,7 @@ public class TestEntityPerson {
 
     private String name;
 
+    // @ManyToOne
     @OneToOne
     private TestEntityAnimal animal;
 

@@ -57,6 +57,7 @@ public class TestAnimalService implements TestAnimalServiceImplement {
 
         TestEntityPerson person = this.serviceImplement.getById(personId);
 
+        animal.getPersonList().add(person);
         animal.setPerson(person);
         person.setAnimal(animal);
 

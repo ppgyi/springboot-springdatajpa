@@ -3,6 +3,8 @@ package com.example.springbootspringdatajpa.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -19,4 +21,7 @@ public class TestEntityAnimal {
 
     @OneToOne
     private TestEntityPerson person;
+
+    @OneToMany
+    private List<TestEntityPerson> personList = new ArrayList<>();
 }
